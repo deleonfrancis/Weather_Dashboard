@@ -1,6 +1,3 @@
-body {
-  /* background-color: black; */
-}
 
 .header {
   background-color: #343a40;
@@ -44,6 +41,7 @@ form.example::after {
   display: table;
 }
 
+/* Left Side of Screen */
 .city-name-area {
   background-color: #f8f9fa;
   padding: 10px 40px 40px 50px;
