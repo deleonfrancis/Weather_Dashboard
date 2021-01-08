@@ -11,9 +11,6 @@ $(document).ready(function () {
     // gets the user input and store it as a variable
     var userSearch = $("#user-search").val().trim();
 
-    // turns user input into a string
-    $("#user-search").val();
-
     // gets the weather data for the user input
     weather(userSearch);
   });
