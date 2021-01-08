@@ -54,16 +54,17 @@ $(document).ready(function () {
           datatype: "json",
           success: function (response2) {
             // print UVI on page
+            $("#uv").removeClass("hidden");
             $("#uv").text(response2.value);
           },
         });
 
-        // Get Icon and put it on the page
+        // Get icon
         var todayIconLocation = response.weather[0].icon;
         var todayIconURL =
           "https://openweathermap.org/img/wn/" + todayIconLocation + "@2x.png";
 
-        // UPDATE ICON FOR MAIN WEATHER CARD
+        // Put icon on the page
         var todayIconImage = $("<img>");
         todayIconImage.attr("src", todayIconURL);
         $("#today-icon").html(todayIconImage);

@@ -1,4 +1,3 @@
-
 .header {
   background-color: #343a40;
   color: white;
@@ -8,7 +7,9 @@
   font-weight: 500;
   color: #f8f9fa;
 }
-
+.hidden {
+  display: none;
+}
 /* Search Button and Input*/
 form.example input[type="text"] {
   padding: 10px;
