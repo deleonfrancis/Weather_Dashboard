@@ -9,7 +9,7 @@ $(document).ready(function () {
     event.preventDefault();
 
     // gets the user input and store it as a variable
-    let userSearch = $("#user-search").val().trim();
+    var userSearch = $("#user-search").val().trim();
 
     // turns user input into a string
     $("#user-search").val();
@@ -17,6 +17,8 @@ $(document).ready(function () {
     // gets the weather data for the user input
     weather(userSearch);
   });
+
+  // Variable that hold's key
   var apiKey = "&appid=b9a7791a6cf8d58430d53a8881a685bc";
 
   // function that gets the info from the API
@@ -30,7 +32,7 @@ $(document).ready(function () {
       datatype: "json",
       success: function (response) {
         // converts K to F
-        let tempInF = ((response.main.temp - 273.15) * 1.8 + 32).toFixed(0);
+        var tempInF = ((response.main.temp - 273.15) * 1.8 + 32).toFixed(0);
 
         // to temperature, humidity, wind speed on the page
         $("#cityName").text(response.name + " (" + currentDate + ")");
@@ -39,8 +41,8 @@ $(document).ready(function () {
         $("#wind").text(response.wind.speed);
 
         // variable for Lat
-        let lat = response.coord.lat;
-        let lon = response.coord.lon;
+        var lat = response.coord.lat;
+        var lon = response.coord.lon;
 
         // api for UVI
         $.ajax({
@@ -81,7 +83,7 @@ $(document).ready(function () {
           success: function (response3) {
             console.log(response3);
             // Day One
-            let day1 = moment().add(1, "days").format("L");
+            var day1 = moment().add(1, "days").format("L");
             $("#day1").text(day1);
             $("#temp1").text(response3.list[1].main.temp.toFixed(0));
             $("#humid1").text(response3.list[1].main.humidity);
@@ -96,7 +98,7 @@ $(document).ready(function () {
             $("#icon-day1").html(iconImageDay1);
 
             // Day Two
-            let day2 = moment().add(2, "days").format("L");
+            var day2 = moment().add(2, "days").format("L");
             $("#day2").html(day2);
             $("#temp2").text(response3.list[8].main.temp.toFixed(0));
             $("#humid2").text(response3.list[8].main.humidity);
@@ -110,7 +112,7 @@ $(document).ready(function () {
             $("#icon-day2").html(iconImageDay2);
 
             // Day Three
-            let day3 = moment().add(3, "days").format("L");
+            var day3 = moment().add(3, "days").format("L");
             $("#day3").html(day3);
             $("#temp3").text(response3.list[16].main.temp.toFixed(0));
             $("#humid3").text(response3.list[16].main.humidity);
@@ -124,7 +126,7 @@ $(document).ready(function () {
             $("#icon-day3").html(iconImageDay3);
 
             // Day Four
-            let day4 = moment().add(4, "days").format("L");
+            var day4 = moment().add(4, "days").format("L");
             $("#day4").html(day4);
             $("#temp4").text(response3.list[24].main.temp.toFixed(0));
             $("#humid4").text(response3.list[24].main.humidity);
@@ -138,7 +140,7 @@ $(document).ready(function () {
             $("#icon-day4").html(iconImageDay4);
 
             // Day Five
-            let day5 = moment().add(5, "days").format("L");
+            var day5 = moment().add(5, "days").format("L");
             $("#day5").html(day5);
             $("#temp5").text(response3.list[32].main.temp.toFixed(0));
             $("#humid5").text(response3.list[32].main.humidity);
