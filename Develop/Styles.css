@@ -1,3 +1,74 @@
 body {
-  background-color: black;
+  /* background-color: black; */
+}
+
+.header {
+  background-color: #343a40;
+  color: white;
+  text-align: center;
+}
+.logo {
+  font-weight: 500;
+  color: #f8f9fa;
+}
+
+/* Search Button and Input*/
+form.example input[type="text"] {
+  padding: 10px;
+  font-size: 17px;
+  border: 1px solid grey;
+  float: left;
+  width: 80%;
+  background: white;
+}
+
+form.example button {
+  float: left;
+  width: 20%;
+  padding: 10px;
+  background: #2196f3;
+  color: white;
+  font-size: 17px;
+  border: 1px solid grey;
+  border-left: none;
+  cursor: pointer;
+}
+
+form.example button:hover {
+  background: #0b7dda;
+}
+
+form.example::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.city-name-area {
+  background-color: #f8f9fa;
+  padding: 10px 40px 40px 50px;
+  height: 100%;
+}
+
+.hidden {
+  /* display: none; */
+}
+
+/* Background Colors */
+.gnbg {
+  background-color: green;
+}
+.rdbg {
+  background-color: red;
+  height: 100%;
+}
+.ylbg {
+  background-color: yellow;
+}
+.orbg {
+  background-color: orange;
+}
+
+.blbg {
+  background-color: blue;
 }
