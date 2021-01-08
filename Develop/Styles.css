@@ -50,25 +50,11 @@ form.example::after {
   height: 100%;
 }
 
-.hidden {
-  /* display: none; */
-}
-
-/* Background Colors */
-.gnbg {
-  background-color: green;
-}
-.rdbg {
-  background-color: red;
+/* 5 Day Forecast */
+.five-day {
+  background-color: #007bff;
+  color: white;
+  margin-right: 30px;
+  border-radius: 5%;
   height: 100%;
-}
-.ylbg {
-  background-color: yellow;
-}
-.orbg {
-  background-color: orange;
-}
-
-.blbg {
-  background-color: blue;
 }

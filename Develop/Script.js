@@ -1,20 +1,15 @@
-"use strict";
+// "use strict";
 
 // Use jQuery
 $(document).ready(function () {
   var currentDate = moment().format("L");
+
   // Target the submitBtn
   $("#submitBtn").on("click", function (event) {
     event.preventDefault();
 
     // gets the user input and store it as a variable
-    let userSearch = $("#user-search").val();
-
-    storeCityName(userSearch);
-    localStorage.setItem("city", JSON.stringify("cities"));
-
-    // console.log("You saved " + storeCityName(userSearch));
-    var query = localStorage.getItem("city") || "Orlando";
+    let userSearch = $("#user-search").val().trim();
 
     // turns user input into a string
     $("#user-search").val();
@@ -79,6 +74,7 @@ $(document).ready(function () {
             $("#day1").text(day1);
             $("#temp1").text(response3.list[1].main.temp.toFixed(0));
             $("#humid1").text(response3.list[1].main.humidity);
+            $("")
 
             // Day Tow
             let day2 = moment().add(2, "days").format("L");
@@ -108,13 +104,7 @@ $(document).ready(function () {
       },
     });
   }
-  // Function that will store city name to the local storage
-  function storeCityName(cityName) {
-    localStorage.setItem("city", cityName);
-  }
-  // create a Variable called currentDate and set it equal to moment API
-  // Make format support multiple locations
-  // var currentDate = moment().format("L");
 
-  // Create a variable that stores my open weather map api key
+  //  Write code to save userSearch in local storage and put it on the page
+  // ....
 });
