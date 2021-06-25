@@ -23,17 +23,34 @@ $(document).ready(function () {
       url:
         "https://api.openweathermap.org/data/2.5/weather?q=" +
         userSearch +
-        apiKey,
+        apiKey +
+        "&units=imperial",
       datatype: "json",
       success: function (response) {
-        // converts K to F
-        var tempInF = ((response.main.temp - 273.15) * 1.8 + 32).toFixed(0);
+
+        let temp = Math.round(response.main.temp)
+        let feels_like = Math.round(response.main.feels_like)
+        let highTemp = Math.round(response.main.temp_max)
+        let lowTemp = Math.round(response.main.temp_min)
+        
+        let description = response.weather[0].description
+        let arrayDescription = description.split(" ");
+        let capDescription = ""
+        for (let i = 0; i < arrayDescription.length; i++) {
+            arrayDescription[i] = arrayDescription[i][0].toUpperCase() + arrayDescription[i].substr(1);
+             capDescription = arrayDescription.join(" ")
+        }
+
         // to temperature, humidity, wind speed on the page
-        $("#cityName").text(`${response.name}, ${response.sys.country} (${currentDate})`);
-        $("#temp").text(tempInF);
+        $("#cityName").text(`${response.name}, ${response.sys.country}`);
+        $("#weather-desc").text(capDescription);
+        $("#temp").text(`${temp}°`);
+        $("#feelsLike").text(feels_like);
+        $("#highTemp").text(highTemp);
+        $("#lowTemp").text(lowTemp);
         $("#humid").text(response.main.humidity);
         $("#wind").text(response.wind.speed);
-
+                
         // variable for Lat
         var lat = response.coord.lat;
         var lon = response.coord.lon;
@@ -50,7 +67,7 @@ $(document).ready(function () {
           datatype: "json",
           success: function (response2) {
             $("#city-current-weather").removeClass("hidden");
-            $("#uc").removeClass("hidden");
+            $("#uv").removeClass("hidden");
             $("#uv").text(response2.value);
           },
         });

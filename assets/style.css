@@ -57,3 +57,12 @@ form.example::after {
   border-radius: 5%;
   height: 100%;
 }
+
+#weather-desc {
+  font-weight:300;
+  font-size: 30px;
+}
+#temp {
+  font-weight:300;
+  font-size: 80px;
+}

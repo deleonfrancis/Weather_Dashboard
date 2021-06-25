@@ -11,9 +11,7 @@ button.addEventListener("click", function() {
    navigator.geolocation.getCurrentPosition(function(position) {
     lat = position.coords.latitude;
     long = position.coords.longitude;
-    
-    console.log(lat, long)
-
+    // console.log(lat, long)
     geolocationWeather(lat, long)
 });
 });
@@ -25,10 +23,29 @@ function geolocationWeather(lat, long) {
         url:`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}${apiKey}&units=imperial`,
         datatype:"json",
         success: function (response) {
+            console.log(response)
             userSearch = response.name
+
+            let temp = Math.round(response.main.temp)
+            let feels_like = Math.round(response.main.feels_like)
+            let highTemp = Math.round(response.main.temp_max)
+            let lowTemp = Math.round(response.main.temp_min)
+            
+            let description = response.weather[0].description
+            let arrayDescription = description.split(" ");
+            let capDescription = ""
+            for (let i = 0; i < arrayDescription.length; i++) {
+                arrayDescription[i] = arrayDescription[i][0].toUpperCase() + arrayDescription[i].substr(1);
+                 capDescription = arrayDescription.join(" ")
+            }
+
 // to temperature, humidity, wind speed on the page
-$("#cityName").text(`${response.name}, ${response.sys.country} (${currentDate})`);
-$("#temp").text(response.main.temp);
+$("#cityName").text(`${response.name}, ${response.sys.country}`);
+$("#weather-desc").text(capDescription);
+$("#temp").text(`${temp}°`);
+$("#feelsLike").text(feels_like);
+$("#highTemp").text(highTemp);
+$("#lowTemp").text(lowTemp);
 $("#humid").text(response.main.humidity);
 $("#wind").text(response.wind.speed);
 
