@@ -8,17 +8,20 @@ let userSearch = "";
 var apiKey = "&appid=b9a7791a6cf8d58430d53a8881a685bc";
 
 button.addEventListener("click", function() {
+    $("#loader").removeClass("hidden")
+    $("#city-current-weather").addClass("hidden")
+    $("#5-day-weather").addClass("hidden")
     try {
         navigator.geolocation.getCurrentPosition(function(position) {
-    lat = position.coords.latitude;
-    long = position.coords.longitude;
-    // console.log(lat, long)
-    geolocationWeather(lat, long)
-});
+        lat = position.coords.latitude;
+        long = position.coords.longitude;
+        // console.log(lat, long)
+        geolocationWeather(lat, long)
+        $("#loader").addClass("hidden")
+    });
     } catch (error) {
         console.log(error)
     }
-   
 });
 
 function geolocationWeather(lat, long) {
