@@ -1,5 +1,3 @@
-// "use strict";
-
 // Use jQuery
 $(document).ready(function () {
   var currentDate = moment().format("L");
@@ -30,9 +28,8 @@ $(document).ready(function () {
       success: function (response) {
         // converts K to F
         var tempInF = ((response.main.temp - 273.15) * 1.8 + 32).toFixed(0);
-
         // to temperature, humidity, wind speed on the page
-        $("#cityName").text(response.name + " (" + currentDate + ")");
+        $("#cityName").text(`${response.name}, ${response.sys.country} (${currentDate})`);
         $("#temp").text(tempInF);
         $("#humid").text(response.main.humidity);
         $("#wind").text(response.wind.speed);
@@ -52,8 +49,8 @@ $(document).ready(function () {
             apiKey,
           datatype: "json",
           success: function (response2) {
-            // print UVI on page
-            $("#uv").removeClass("hidden");
+            $("#city-current-weather").removeClass("hidden");
+            $("#uc").removeClass("hidden");
             $("#uv").text(response2.value);
           },
         });
@@ -78,7 +75,8 @@ $(document).ready(function () {
             apiKey,
           datatype: "json",
           success: function (response3) {
-            console.log(response3);
+            $("#5-day-weather").removeClass("hidden");
+
             // Day One
             var day1 = moment().add(1, "days").format("L");
             $("#day1").text(day1);

@@ -34,11 +34,17 @@
 
     <!-- Main Section -->
     <main class="">
+
+      <!-- Geolocation Weather Search Btn -->
+      <button id="get-location" async >
+        Search Weather Near Me
+      </button>
+
       <div class="row">
         <div class="col-md-3 city-name-area">
           <!-- Search for a city -->
           <div class="row">
-            <form class="example">
+            <form class="example" autocomplete="off">
               <label for="search"
                 ><h4 class="m-0">Search for a City:</h4></label
               >
@@ -63,11 +69,11 @@
         </div>
         <div class="col-md-8 ml-3 mt-3">
           <!-- Selected city's Weather -->
-          <div class="row">
+          <div id="city-current-weather" class="row hidden">
             <div class="card" style="width: 100%">
               <div class="card-body" id="current-weather">
-                <h2 class="card-title pb-3">
-                  <span id="cityName"></span><span class="date"></span
+                <h2 class="card-title pb-3 cityInfo">
+                  <span id="cityName"></span> <span id="country"></span> <span class="date"></span
                   ><span id="today-icon"></span>
                 </h2>
                 <p>Temperature: <span id="temp"></span> °F</p>
@@ -84,7 +90,7 @@
             </div>
           </div>
           <!-- Five Day Weather -->
-          <div class="row">
+          <div id="5-day-weather" class="row hidden">
             <div class="mt-3" style="width: 100%" id="five-day">
               <h1>5-Day Forecast:</h1>
             </div>
@@ -152,7 +158,21 @@
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
       crossorigin="anonymous"
     ></script>
+
+    <!-- Google Api -->
+    <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+    <!-- <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyALxIp7Nd5KgCtoHZib8gZnIhC_TtDAp-s&callback=initAutocomplete&libraries=places&v=weekly"
+    async
+  ></script> -->
+
+  <!-- <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyALxIp7Nd5KgCtoHZib8gZnIhC_TtDAp-s&callback=initAutocomplete&libraries=places&v=weekly"
+      async
+    ></script> -->
     <!-- My JS -->
     <script src="./assets/script.js"></script>
+    <script src="./assets/geolocation.js"></script>
+    <!-- <script src="./assets/autoFill.js"></script> -->
   </body>
 </html>
