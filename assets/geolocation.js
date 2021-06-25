@@ -8,22 +8,27 @@ let userSearch = "";
 var apiKey = "&appid=b9a7791a6cf8d58430d53a8881a685bc";
 
 button.addEventListener("click", function() {
-   navigator.geolocation.getCurrentPosition(function(position) {
+    try {
+        navigator.geolocation.getCurrentPosition(function(position) {
     lat = position.coords.latitude;
     long = position.coords.longitude;
     // console.log(lat, long)
     geolocationWeather(lat, long)
 });
+    } catch (error) {
+        console.log(error)
+    }
+   
 });
 
 function geolocationWeather(lat, long) {
-    console.log("running geolocation function")
     $.ajax({
         method: "GET",
         url:`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}${apiKey}&units=imperial`,
         datatype:"json",
         success: function (response) {
             console.log(response)
+            
             userSearch = response.name
 
             let temp = Math.round(response.main.temp)

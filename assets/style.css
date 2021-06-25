@@ -66,3 +66,6 @@ form.example::after {
   font-weight:300;
   font-size: 80px;
 }
+
+.textCenter{
+text-align: center;}
