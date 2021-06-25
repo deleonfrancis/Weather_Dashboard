@@ -1,4 +1,5 @@
 let button = document.getElementById("get-location");
+let displayError = document.getElementById("error-display");
 let lat = "";
 let long = "";
 const currentDate = moment().format("L");
@@ -7,22 +8,63 @@ let userSearch = "";
 // Weather API key
 var apiKey = "&appid=b9a7791a6cf8d58430d53a8881a685bc";
 
+// button.addEventListener("click", function() {
+//     $("#loader").removeClass("hidden")
+//     $("#city-current-weather").addClass("hidden")
+//     $("#5-day-weather").addClass("hidden")
+//     try {
+//         navigator.geolocation.getCurrentPosition(function(position) {
+//         lat = position.coords.latitude;
+//         long = position.coords.longitude;
+//         // console.log(lat, long)
+//         geolocationWeather(lat, long)
+//         $("#loader").addClass("hidden")
+//     });
+//     } catch (error) {
+//         console.log(error)
+//     }
+// });
+
 button.addEventListener("click", function() {
+    $("#error-display").text("")
+    $("#error-display").addClass("hidden").removeClass("mt-5")
     $("#loader").removeClass("hidden")
     $("#city-current-weather").addClass("hidden")
     $("#5-day-weather").addClass("hidden")
-    try {
-        navigator.geolocation.getCurrentPosition(function(position) {
-        lat = position.coords.latitude;
-        long = position.coords.longitude;
-        // console.log(lat, long)
-        geolocationWeather(lat, long)
-        $("#loader").addClass("hidden")
-    });
-    } catch (error) {
-        console.log(error)
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(getWeather, showError);
+    } else {
+        $("#error-display").text("Geolocation is not supported by this browser.").addClass("mt-5")
     }
 });
+
+function getWeather(position) {
+    lat = position.coords.latitude;
+    long = position.coords.longitude;
+    // console.log(lat, long)
+    geolocationWeather(lat, long)
+    $("#loader").addClass("hidden")
+  }
+  
+  function showError(error) {
+    $("#loader").addClass("hidden")
+    
+    switch(error.code) {
+      case error.PERMISSION_DENIED:
+        $("#error-display").text("User denied the request for Geolocation. Please ensure that your browser 'Location Services' is turned on and try again.").addClass("mt-5")
+        break;
+      case error.POSITION_UNAVAILABLE:
+        $("#error-display").text("Location information is unavailable.").addClass("mt-5")
+        break;
+      case error.TIMEOUT:
+        $("#error-display").text("The request to get user location timed out.").addClass("mt-5")
+        break;
+        case error.UNKNOWN_ERROR:
+        $("#error-display").text("An unknown error occurred.").addClass("mt-5")
+        break;
+    }
+  }
+
 
 function geolocationWeather(lat, long) {
     $.ajax({

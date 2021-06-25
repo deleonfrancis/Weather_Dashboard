@@ -36,12 +36,6 @@
     <main class="">
       <div class="row d-flex justify-content-center">
         <div class="col-md-3 city-name-area mt-5">
-          <!-- Geolocation Weather Search Btn -->
-      <div style="text-align: center;" class="mb-4">
-        <button id="get-location" async >
-          Search Weather Near Me
-        </button>
-      </div>
           <!-- Search for a city -->
           <div class="row">
             <form class="example" autocomplete="off">
@@ -60,6 +54,17 @@
               </button>
             </form>
           </div>
+
+          <hr>
+          <p class="d-flex justify-content-center">or</p>
+          <hr>
+          <!-- Geolocation Weather Search Btn -->
+      <div style="text-align: center;" class="my-4 d-flex justify-content-center">
+        <button id="get-location" type="button" class="btn btn-primary btn-block w-75" async >
+          Search Weather Near Me
+        </button>
+      </div>
+          
           <!-- List of cities -->
           <div class="row mt-3">
             <div class="card" style="width: 100%">
@@ -69,6 +74,7 @@
         </div>
         <div class="col-md-8 ml-3 mt-3">
           <div id="loader" class="loader hidden"></div>
+          <div id="error-display" class="d-flex justify-content-center"></div>
           <!-- Selected city's Weather -->
           <div id="city-current-weather" class="row hidden">
             <div class="card" style="width: 100%">
