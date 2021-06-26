@@ -37,7 +37,7 @@
       <div class="row d-flex justify-content-center">
         <div class="col-md-3 city-name-area mt-5">
           <!-- Search for a city -->
-          <div class="row">
+          <div class="row d-flex justify-content-center">
             <form class="example" autocomplete="off">
               <label for="search"
                 ><h4 class="m-0">Search for a City:</h4></label
@@ -55,9 +55,10 @@
             </form>
           </div>
 
-          <hr>
-          <p class="d-flex justify-content-center">or</p>
-          <hr>
+          <hr class="w-50">
+          <h4 class="d-flex justify-content-center">or</h4>
+          <hr class="w-50">
+          
           <!-- Geolocation Weather Search Btn -->
       <div style="text-align: center;" class="my-4 d-flex justify-content-center">
         <button id="get-location" type="button" class="btn btn-primary btn-block w-75" async >
@@ -77,8 +78,8 @@
           <div id="error-display" class="d-flex justify-content-center"></div>
           <!-- Selected city's Weather -->
           <div id="city-current-weather" class="row hidden">
-            <div class="card" style="width: 100%">
-              <div class="card-body" id="current-weather">
+            <div class="card border-0" style="width: 100%">
+              <div class="card-body bg-dark text-light shadow" id="current-weather">
                 <h3 class="card-title mb-0 d-flex justify-content-center">
                   <span id="cityName"></span>
                   <span id="country"></span>

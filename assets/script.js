@@ -6,6 +6,9 @@ $(document).ready(function () {
   $("#submitBtn").on("click", function (event) {
     event.preventDefault();
 
+    $("#error-display").text("")
+    $("#error-display").addClass("hidden").removeClass("mt-5")
+
     // gets the user input and store it as a variable
     var userSearch = $("#user-search").val().trim();
 
