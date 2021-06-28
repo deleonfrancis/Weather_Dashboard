@@ -147,9 +147,10 @@
                     </p>
                   </div>
                   <div class="col-sm-12 col-md-4">
-                    <p class="textCenter">
-                      Wind Speed: <span id="wind"></span> mph
-                    </p>
+                    <ul class="textCenter no-bullets">
+                      <li>Wind Speed: <span id="windSpeed"></span> mph</li>
+                      <li>Wind Direction: <span id="windDir"></span>°</li>
+                    </ul>
                   </div>
                   <div class="col-sm-12 col-md-4">
                     <p class="textCenter">
@@ -172,7 +173,7 @@
             </div>
           </div>
           <!-- 3 Day Weather -->
-          <div id="5-day-weather" class="row hidden">
+          <div id="3-day-weather" class="row hidden">
             <div class="mt-3" style="width: 100%" id="five-day">
               <h1>Forecast:</h1>
             </div>
@@ -182,8 +183,10 @@
               <div class="card-body">
                 <h4 id="day1" class="pb-3"></h4>
                 <p class=""><span id="icon-day1"></span></p>
-                <p class="pb-2">Temp: <span id="temp1"></span> °F</p>
-                <p class="">Humidity: <span id="humid1"></span> %</p>
+                <p class="pb-2">High Temp: <span id="maxTemp1"></span> °F</p>
+                <p class="pb-2">Low Temp: <span id="minTemp1"></span> °F</p>
+                <p class="">Humidity: <span id="humid1"></span>%</p>
+                <p class="">Change of rain: <span id="rainChance1"></span>%</p>
               </div>
             </div>
 
@@ -192,8 +195,10 @@
               <div class="card-body">
                 <h4 id="day2" class="pb-3"></h4>
                 <p class="" id="icon-day2"></p>
-                <p class="pb-2">Temp: <span id="temp2"></span> °F</p>
-                <p class="">Humidity: <span id="humid2"></span> %</p>
+                <p class="pb-2">High Temp: <span id="maxTemp2"></span> °F</p>
+                <p class="pb-2">Low Temp: <span id="minTemp2"></span> °F</p>
+                <p class="">Humidity: <span id="humid2"></span>%</p>
+                <p class="">Change of rain: <span id="rainChance2"></span>%</p>
               </div>
             </div>
 
@@ -202,8 +207,10 @@
               <div class="card-body">
                 <h4 id="day3" class="pb-3"></h4>
                 <p class="" id="icon-day3"></p>
-                <p class="pb-2">Temp: <span id="temp3"></span> °F</p>
-                <p class="">Humidity: <span id="humid3"></span> %</p>
+                <p class="pb-2">High Temp: <span id="maxTemp3"></span> °F</p>
+                <p class="pb-2">Low Temp: <span id="minTemp3"></span> °F</p>
+                <p class="">Humidity: <span id="humid3"></span>%</p>
+                <p class="">Change of rain: <span id="rainChance3"></span>%</p>
               </div>
             </div>
           </div>

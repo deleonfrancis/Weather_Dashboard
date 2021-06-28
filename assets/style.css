@@ -10,6 +10,11 @@
 .hidden {
   display: none;
 }
+
+ul.no-bullets {
+  list-style-type: none; /* Remove bullets */
+}
+
 /* Search Button and Input*/
 form.example input[type="text"] {
   padding: 10px;
