@@ -6,7 +6,7 @@ const currentDate = moment().format("L");
 let userSearch = "";
 
 // Weather API key
-var apiKey = "&appid=b9a7791a6cf8d58430d53a8881a685bc";
+var apiKeyOW = "&appid=b9a7791a6cf8d58430d53a8881a685bc";
 
 // button.addEventListener("click", function() {
 //     $("#loader").removeClass("hidden")
@@ -41,7 +41,7 @@ button.addEventListener("click", function() {
 function getWeather(position) {
     lat = position.coords.latitude;
     long = position.coords.longitude;
-    // console.log(lat, long)
+    console.log(lat, long)
     geolocationWeather(lat, long)
     $("#loader").addClass("hidden")
   }
@@ -69,7 +69,7 @@ function getWeather(position) {
 function geolocationWeather(lat, long) {
     $.ajax({
         method: "GET",
-        url:`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}${apiKey}&units=imperial`,
+        url:`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}${apiKeyOW}&units=imperial`,
         datatype:"json",
         success: function (response) {
             console.log(response)
@@ -111,7 +111,7 @@ $.ajax({
     lat +
     "&lon=" +
     lon +
-    apiKey,
+    apiKeyOW,
   datatype: "json",
   success: function (response2) {
     $("#city-current-weather").removeClass("hidden");
@@ -137,7 +137,7 @@ $.ajax({
     "https://api.openweathermap.org/data/2.5/forecast?q=" +
     userSearch +
     "&units=imperial" +
-    apiKey,
+    apiKeyOW,
   datatype: "json",
   success: function (response3) {
     $("#5-day-weather").removeClass("hidden");

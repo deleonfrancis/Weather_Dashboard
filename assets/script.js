@@ -5,7 +5,7 @@ $(document).ready(function () {
   // Target the submitBtn
   $("#submitBtn").on("click", function (event) {
     event.preventDefault();
-
+ console.log("submit btn clicked OW")
     $("#error-display").text("")
     $("#error-display").addClass("hidden").removeClass("mt-5")
 
@@ -17,7 +17,7 @@ $(document).ready(function () {
   });
 
   // Variable that hold's key
-  var apiKey = "&appid=b9a7791a6cf8d58430d53a8881a685bc";
+  var apiKeyOW = "&appid=b9a7791a6cf8d58430d53a8881a685bc";
 
   // function that gets the info from the API
   function weather(userSearch) {
@@ -26,11 +26,11 @@ $(document).ready(function () {
       url:
         "https://api.openweathermap.org/data/2.5/weather?q=" +
         userSearch +
-        apiKey +
+        apiKeyOW +
         "&units=imperial",
       datatype: "json",
       success: function (response) {
-
+        console.log(response)
         let temp = Math.round(response.main.temp)
         let feels_like = Math.round(response.main.feels_like)
         let highTemp = Math.round(response.main.temp_max)
@@ -66,7 +66,7 @@ $(document).ready(function () {
             lat +
             "&lon=" +
             lon +
-            apiKey,
+            apiKeyOW,
           datatype: "json",
           success: function (response2) {
             $("#city-current-weather").removeClass("hidden");
@@ -92,7 +92,7 @@ $(document).ready(function () {
             "https://api.openweathermap.org/data/2.5/forecast?q=" +
             userSearch +
             "&units=imperial" +
-            apiKey,
+            apiKeyOW,
           datatype: "json",
           success: function (response3) {
             $("#5-day-weather").removeClass("hidden");
