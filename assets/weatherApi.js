@@ -12,15 +12,4 @@ $(document).ready(function () {
     getWeather(userInput);
   });
 
-  const getWeather = (userInput) => {
-    $.ajax({
-        method: "GET",
-        url: `http://api.weatherapi.com/v1/current.json?key=${apiKeyWeatherAPI}&q=${userInput}&aqi=no`,
-        datatype: "json",
-        success: function (res) {
-            console.log(res)
-        }
-    })
-  }
-
 });

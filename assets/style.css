@@ -54,12 +54,12 @@ form.example::after {
   height: 100%;
 }
 
-/* 5 Day Forecast */
-.five-day {
+/* 3 Day Forecast */
+.three-day {
   background-color: #007bff;
   color: white;
-  margin-right: 30px;
-  border-radius: 5%;
+  margin: 15px;
+  /* border-radius: 5%; */
   height: 100%;
 }
 
