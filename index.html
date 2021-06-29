@@ -37,9 +37,10 @@
       </video>
       <div class="container text-white">
         <h1 class="display-4">Weather Dash</h1>
-        <p class="lead">Get weather information for any city in the world.</p>
+        <p class="lead mb-4">
+          Get weather information for any city in the world.
+        </p>
         <!-- <p class="lead">created by <a class="text-danger" href="https://www.dxfrancis.com" target="_blank">Xavier</a></p> -->
-        <hr class="my-4" />
 
         <!-- Search Area -->
         <div class="mb-3">
@@ -74,11 +75,11 @@
 
     <!-- Main Section -->
     <main class="">
-      <div class="row d-flex justify-content-center">
-        <div class="col-md-8 ml-3 mt-3">
-          <div id="loader" class="loader hidden"></div>
-          <div id="error-display" class="d-flex justify-content-center"></div>
+      <div id="loader" class="loader hidden"></div>
+      <div id="error-display" class="d-flex justify-content-center"></div>
 
+      <div class="row d-flex justify-content-around">
+        <div class="col-md-5 mt-3">
           <!-- Selected city's Weather -->
           <div id="city-current-weather" class="row hidden">
             <div class="card border-0" style="width: 100%">
@@ -141,9 +142,11 @@
               </div>
             </div>
           </div>
+        </div>
+        <div class="col-lg-5">
           <!-- 2 Day Weather -->
-          <div id="2-day-weather" class="row hidden">
-            <div class="mt-5" style="width: 100%" id="five-day">
+          <div id="2-day-weather" class="row hidden mt-3">
+            <div class="" style="width: 100%" id="five-day">
               <h3>Two Day Forecast:</h3>
             </div>
 
