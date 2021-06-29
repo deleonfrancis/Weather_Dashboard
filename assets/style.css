@@ -15,7 +15,15 @@ ul.no-bullets {
   list-style-type: none; /* Remove bullets */
 }
 
-/* Search Button and Input*/
+ html {
+  width: 100%;
+}
+
+/* Form Input and Btn */
+form.example {
+  margin: auto;
+}
+
 form.example input[type="text"] {
   padding: 10px;
   font-size: 17px;
@@ -23,6 +31,7 @@ form.example input[type="text"] {
   float: left;
   width: 80%;
   background: white;
+  opacity: .9;
 }
 
 form.example button {
@@ -30,6 +39,7 @@ form.example button {
   width: 20%;
   padding: 10px;
   background: #2196f3;
+  opacity: .3;
   color: white;
   font-size: 17px;
   border: 1px solid grey;
@@ -39,6 +49,8 @@ form.example button {
 
 form.example button:hover {
   background: #0b7dda;
+  opacity: .7;
+
 }
 
 form.example::after {
@@ -47,15 +59,23 @@ form.example::after {
   display: table;
 }
 
-.geoBtn{
-  background-color: #2196f3;
-  color: white;
-}
-.geoBtn:hover {
-  background-color: #0b7dda;
-  color: white;
+@media only screen and (min-width: 638px) {
+  form.example {
+    width: 45%;
+  }
 }
 
+.geoBtn {
+  color: #2196f3;
+  text-align: center;
+  opacity: .5;
+
+}
+.geoBtn:hover, :focus {
+  color: rgb(39, 177, 39);
+  opacity: .8;
+
+}
 
 /* Left Side of Screen */
 .city-name-area {
@@ -74,17 +94,17 @@ form.example::after {
 
 /* Current Weather */
 #weather-desc {
-  font-weight:300;
+  font-weight: 300;
   font-size: 30px;
 }
 #temp {
-  font-weight:300;
+  font-weight: 300;
   font-size: 80px;
 }
 
-.textCenter{
-text-align: center;}
-
+.textCenter {
+  text-align: center;
+}
 
 /* Loader */
 .loader {
@@ -98,6 +118,35 @@ text-align: center;}
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Video and jumbotron */
+
+.jumbotron {
+  position: relative;
+  overflow: hidden;
+  background-color: black;
+  border-radius: 0%;
+}
+.jumbotron video {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  width: 100%;
+  height: 100%;
+
+  /*  object-fit is not supported on IE  */
+  object-fit: cover;
+  opacity: 0.5;
+  margin: 0  -1%
+}
+.jumbotron .container {
+  z-index: 2;
+  position: relative;
 }

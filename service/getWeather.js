@@ -10,7 +10,7 @@ function getWeather(input) {
       success: function (response) {
         setLoading(false)  
         showData()
-        // console.log(response);
+        console.log(response);
   
         const city = response.location.name;
         const state = response.location.region;
