@@ -1,6 +1,6 @@
 # Weather_Dashboard
 
-> This Web Application allows user to type in a city and get the current and five day weather for that city.
+> This Web Application allows user to get current and two day weather forecast. Simply type in a city name or zip code. Don't know where you are? Click the 'search weather near me' button to get the current weather data near you. 
 
 ![](images/weatherdash1.png)
 
@@ -16,7 +16,7 @@
 
 ## Description
 
-This Web Application allows user to type in a city and get the current and five day weather for that city. This was accomplished using HTML, CSS, Javascript, and Moment.js and open weather map's APIs. See [How To Use](#how-to-use) section for an explanation of how it works.
+This Web Application allows user to get current and two day weather forecast. Simply type in a city name or zip code. The user can also click the 'search weather near me' button to get the current weather data nearby. This was accomplished using HTML, CSS, Javascript, and Bootstrap. Google places API auto completes the user inputs. Weatherapi.com was used as the data source. JavaScripts geolocation is used to get the coordinates for the user. See [How To Use](#how-to-use) section for an explanation of how it works.
 
 Overall a fun and challenging project. I came away with a better understanding of incorporating APIs into a website.
 
@@ -26,7 +26,7 @@ Overall a fun and challenging project. I came away with a better understanding o
 - CSS
 - Javascript
 - Jquery
-- APIs(moment.js, open weather map)
+- APIs(google places, weather api)
 
 [Back To The Top](#read-me-template)
 
@@ -34,10 +34,11 @@ Overall a fun and challenging project. I came away with a better understanding o
 
 ## How To Use
 
-1. Type your city into the search area
-2. Press enter or click on the search button.
+1. Type your city or zip code into the text input. Google auto       complete will help find a suitable place. 
+2. Press click on the search button.
 3. The application will then give you the current date, weather details, and a five day weather forecast.
 4. Simply type in another city to view somewhere else.  
+5. Try using the 'Search Weather Near Me' button to get the weather for a city near you.  
    [Back To The Top](#read-me-template)
 
 ---
