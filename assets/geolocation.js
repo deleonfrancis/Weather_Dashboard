@@ -1,15 +1,9 @@
 // Logic for getting weather for nearby location
-
-const userInput = $("#user-input").val().trim();
 let button = document.getElementById("get-location");
-let displayError = document.getElementById("error-display");
 let lat = "";
 let long = "";
 
-// Weather API key
-const apiKeyWeatherAPI = "04fd0ca58baa4f0b836181340212806";
-
-button.addEventListener("click", function () {
+window.onload = function () {
   setLoading(true);
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(getGeoWeather, showError);
@@ -18,7 +12,20 @@ button.addEventListener("click", function () {
       .text("Geolocation is not supported by this browser.")
       .addClass("mt-5");
   }
-});
+};
+
+button.addEventListener("click", geoErrorCheck);
+
+function geoErrorCheck() {
+  setLoading(true);
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(getGeoWeather, showError);
+  } else {
+    $("#error-display")
+      .text("Geolocation is not supported by this browser.")
+      .addClass("mt-5");
+  }
+}
 
 function getGeoWeather(position) {
   lat = position.coords.latitude;

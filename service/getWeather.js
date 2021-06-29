@@ -1,3 +1,5 @@
+const apiKeyWeatherAPI = "04fd0ca58baa4f0b836181340212806"
+
 function getWeather(input) {
   setLoading(true)
   hideGeoErrors()
