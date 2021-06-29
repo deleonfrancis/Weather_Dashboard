@@ -1,7 +1,8 @@
+// Logic for Google Auto Complete
+
 let autocomplete;
 
 function initAutocomplete() {
-//   event.preventDefault();
   autocomplete = new google.maps.places.Autocomplete(
     document.getElementById("user-input"),
     {

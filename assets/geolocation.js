@@ -1,3 +1,5 @@
+// Logic for getting weather for nearby location
+
 const userInput = $("#user-input").val().trim();
 let button = document.getElementById("get-location");
 let displayError = document.getElementById("error-display");

@@ -1,4 +1,7 @@
 function getWeather(input) {
+  setLoading(true)
+  hideGeoErrors()
+
     $.ajax({
       method: "GET",
       url: `https://api.weatherapi.com/v1/forecast.json?key=${apiKeyWeatherAPI}&q=${input}&days=3&aqi=yes&alerts=yes`,
@@ -38,16 +41,7 @@ function getWeather(input) {
         const chanceOfRain =
           response.forecast.forecastday[0].day.daily_chance_of_rain;
   
-        // 
         const description = response.forecast.forecastday[0].day.condition.text;
-        let arrayDescription = description.split(" ");
-        let capDescription = "";
-        for (let i = 0; i < arrayDescription.length; i++) {
-          arrayDescription[i] =
-            arrayDescription[i][0].toUpperCase() + arrayDescription[i].substr(1);
-          capDescription = arrayDescription.join(" ");
-        }
-        // use css to cap each letter.
   
         if (country === "United States of America") {
           $("#cityName").text(`${city}, ${state}`);
@@ -55,7 +49,7 @@ function getWeather(input) {
           $("#cityName").text(`${city}, ${country}`);
         }
   
-        $("#weather-desc").text(capDescription);
+        $("#weather-desc").text(description);
         $("#temp").text(`${temp}°`);
         $("#feelsLike").text(feels_like);
         $("#highTemp").text(highTemp);
