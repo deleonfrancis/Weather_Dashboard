@@ -70,7 +70,7 @@ function getWeather(input) {
   
         // Day One
         const day1 = response.forecast.forecastday[1];
-        const date = day1.date;
+        const date = moment(day1.date).format("LL")
         const maxTemp1 = day1.day.maxtemp_f;
         const minTemp1 = day1.day.mintemp_f;
         const avgHumidity1 = day1.day.avghumidity;
@@ -90,7 +90,7 @@ function getWeather(input) {
   
         // Day Two
         const day2 = response.forecast.forecastday[2];
-        const date2 = day2.date;
+        const date2 = moment(day2.date).format("LL")
         const maxTemp2 = day2.day.maxtemp_f;
         const minTemp2 = day2.day.mintemp_f;
         const avgHumidity2 = day2.day.avghumidity;
