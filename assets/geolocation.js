@@ -9,11 +9,7 @@ let long = "";
 const apiKeyWeatherAPI = "04fd0ca58baa4f0b836181340212806";
 
 button.addEventListener("click", function () {
-  $("#error-display").text("");
-  $("#error-display").addClass("hidden").removeClass("mt-5");
-  $("#loader").removeClass("hidden");
-  $("#city-current-weather").addClass("hidden");
-  $("#2-day-weather").addClass("hidden");
+  setLoading(true);
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(getGeoWeather, showError);
   } else {
@@ -28,12 +24,10 @@ function getGeoWeather(position) {
   long = position.coords.longitude;
   console.log(lat, long);
   getWeather(`${lat} ${long}`);
-  $("#loader").addClass("hidden");
 }
 
 function showError(error) {
-  $("#loader").addClass("hidden");
-
+  setLoading(false)
   switch (error.code) {
     case error.PERMISSION_DENIED:
       $("#error-display")
@@ -57,4 +51,3 @@ function showError(error) {
       break;
   }
 }
-

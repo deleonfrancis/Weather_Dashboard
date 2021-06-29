@@ -5,10 +5,10 @@ function getWeather(input) {
   
       datatype: "json",
       success: function (response) {
-        $("#city-current-weather").removeClass("hidden");
-        $("#uv").removeClass("hidden");
-        $("#2-day-weather").removeClass("hidden");
-  
+        setLoading(false)  
+        showData()
+        // $("#city-current-weather").removeClass("hidden");
+        // $("#2-day-weather").removeClass("hidden");
         console.log(response);
   
         const city = response.location.name;

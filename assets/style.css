@@ -47,6 +47,16 @@ form.example::after {
   display: table;
 }
 
+.geoBtn{
+  background-color: #2196f3;
+  color: white;
+}
+.geoBtn:hover {
+  background-color: #0b7dda;
+  color: white;
+}
+
+
 /* Left Side of Screen */
 .city-name-area {
   background-color: #f8f9fa;
@@ -54,12 +64,11 @@ form.example::after {
   height: 100%;
 }
 
-/* 3 Day Forecast */
-.three-day {
-  background-color: #007bff;
+/* 2 Day Forecast */
+.two-day {
+  background-color: #2196f3;
   color: white;
   margin: 15px;
-  /* border-radius: 5%; */
   height: 100%;
 }
 

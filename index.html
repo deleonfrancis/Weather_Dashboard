@@ -26,7 +26,6 @@
 
     <!-- Google -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDjJkj9ijn5LRW9kh5Q1KQvaT3faLoKUIg&callback=initAutocomplete&libraries=places&v=weekly"></script>
-    
   </head>
   <body>
     <!-- Jumbotron -->
@@ -39,7 +38,8 @@
     <!-- Main Section -->
     <main class="">
       <div class="row d-flex justify-content-center">
-        <div class="col-md-3 city-name-area mt-5">
+        <div class="col-md-3 city-name-area mt-5 shadow">
+          
           <!-- Geolocation Weather Search Btn -->
           <div
             style="text-align: center"
@@ -48,7 +48,7 @@
             <button
               id="get-location"
               type="button"
-              class="btn btn-primary btn-block w-75"
+              class="btn geoBtn btn-block w-75"
               async
             >
               Search Weather Near Me
@@ -58,42 +58,25 @@
           <hr class="w-50" />
           <h4 class="d-flex justify-content-center">or</h4>
           <hr class="w-50" />
+
           <!-- Search for a city -->
-          <!-- OWP Api -->
-          <!-- <div class="row d-flex justify-content-center">
-            <form class="example" autocomplete="off">
-              <label for="search"
-                ><h4 class="m-0">Search for a City:</h4></label
-              >
+          <div class="">
+            <form class="example">
               <input
-                id="user-search"
+                id="user-input"
                 type="text"
-                placeholder="Search.."
+                autocomplete="off"
                 name="search"
+                placeholder="Search City or Zip Code"
+                aria-label="Search City or Zip Code"
+                aria-describedby="button-addon2"
               />
-              Submit Button
-              <button type="submit" id="submitBtn">
+              <div id="map" class="map"></div>
+              <!-- Submit Button -->
+              <button type="submit" id="weatherSearchBtn">
                 <i class="fa fa-search"></i>
               </button>
             </form>
-          </div> -->
-
-          <!-- Weather Api -->
-          <div class="input-group mb-3">
-            <input
-              id="user-input"
-              type="text"
-              autocomplete="off"
-              class="form-control"
-              placeholder="Search City or Zip Code"
-              aria-label="Search City or Zip Code"
-              aria-describedby="button-addon2"
-            />
-            <div id="map" class="map"></div>
-            <!-- <button class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button> -->
-            <button type="submit" id="weatherSearchBtn">
-              <i class="fa fa-search"></i>
-            </button>
           </div>
 
           <!-- List of cities -->
@@ -106,6 +89,7 @@
         <div class="col-md-8 ml-3 mt-3">
           <div id="loader" class="loader hidden"></div>
           <div id="error-display" class="d-flex justify-content-center"></div>
+
           <!-- Selected city's Weather -->
           <div id="city-current-weather" class="row hidden">
             <div class="card border-0" style="width: 100%">
@@ -147,7 +131,7 @@
                     </p>
                   </div>
                   <div class="col-sm-12 col-md-4">
-                    <ul class="textCenter no-bullets">
+                    <ul class="textCenter no-bullets p-0">
                       <li>Wind Speed: <span id="windSpeed"></span> mph</li>
                       <li>Wind Direction: <span id="windDir"></span>°</li>
                     </ul>
@@ -163,7 +147,6 @@
                           p-2
                           border-danger
                           rounded
-                          hidden
                         "
                       ></span>
                     </p>
@@ -175,12 +158,12 @@
           <!-- 2 Day Weather -->
           <div id="2-day-weather" class="row hidden">
             <div class="mt-5" style="width: 100%" id="five-day">
-              <h3> Two Day Forecast:</h3>
+              <h3>Two Day Forecast:</h3>
             </div>
 
             <!-- Day 1 -->
-            <div class="card three-day p-2 col-lg-3">
-              <div class="card-body">
+            <div class="card two-day p-2 col-lg-3">
+              <div class="card-body textCenter">
                 <h4 id="day1" class="pb-3"></h4>
                 <p class=""><span id="icon-day1"></span></p>
                 <p class="pb-2">High Temp: <span id="maxTemp1"></span> °F</p>
@@ -191,8 +174,8 @@
             </div>
 
             <!-- Day 2 -->
-            <div class="card three-day p-2 col-lg-3">
-              <div class="card-body">
+            <div class="card two-day p-2 col-lg-3">
+              <div class="card-body textCenter">
                 <h4 id="day2" class="pb-3"></h4>
                 <p class="" id="icon-day2"></p>
                 <p class="pb-2">High Temp: <span id="maxTemp2"></span> °F</p>
@@ -221,5 +204,7 @@
     <script src="./assets/weatherApi.js"></script>
     <script src="./assets/autoFill.js"></script>
     <script src="./service/getWeather.js"></script>
+    <script src="./service/loading.js"></script>
+    <script src="./service/displayData.js"></script>
   </body>
 </html>
