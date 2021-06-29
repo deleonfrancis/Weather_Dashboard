@@ -1,7 +1,7 @@
 function getWeather(input) {
     $.ajax({
       method: "GET",
-      url: `http://api.weatherapi.com/v1/forecast.json?key=${apiKeyWeatherAPI}&q=${input}&days=3&aqi=yes&alerts=yes`,
+      url: `https://api.weatherapi.com/v1/forecast.json?key=${apiKeyWeatherAPI}&q=${input}&days=3&aqi=yes&alerts=yes`,
   
       datatype: "json",
       success: function (response) {
