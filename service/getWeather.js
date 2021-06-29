@@ -1,4 +1,3 @@
-
 function getWeather(input) {
     $.ajax({
       method: "GET",
@@ -53,7 +52,7 @@ function getWeather(input) {
         if (country === "United States of America") {
           $("#cityName").text(`${city}, ${state}`);
         } else {
-          $("#cityName").text(`${city}, ${state} ,${country}`);
+          $("#cityName").text(`${city}, ${country}`);
         }
   
         $("#weather-desc").text(capDescription);

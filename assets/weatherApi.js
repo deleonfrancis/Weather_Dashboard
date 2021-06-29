@@ -3,7 +3,7 @@ $(document).ready(function () {
 
   $("#weatherSearchBtn").on("click", function (event) {
     event.preventDefault();
-    console.log("weather btn clicked")
+    
     // Remove Error Messages 
     $("#error-display").text("")
     $("#error-display").addClass("hidden").removeClass("mt-5")
