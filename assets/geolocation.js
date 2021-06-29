@@ -3,7 +3,6 @@ let button = document.getElementById("get-location");
 let displayError = document.getElementById("error-display");
 let lat = "";
 let long = "";
-// const currentDate = moment().format("L");
 
 // Weather API key
 const apiKeyWeatherAPI = "04fd0ca58baa4f0b836181340212806";
@@ -31,9 +30,7 @@ function showError(error) {
   switch (error.code) {
     case error.PERMISSION_DENIED:
       $("#error-display")
-        .text(
-          "User denied the request for Geolocation. Please ensure that your browser 'Location Services' is turned on and try again."
-        )
+        .text("Please verify 'Location Services' is on and try again.")
         .addClass("mt-5");
       break;
     case error.POSITION_UNAVAILABLE:
