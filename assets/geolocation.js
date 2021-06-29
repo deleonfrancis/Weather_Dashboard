@@ -27,7 +27,7 @@ function getGeoWeather(position) {
 }
 
 function showError(error) {
-  setLoading(false)
+  setLoading(false);
   switch (error.code) {
     case error.PERMISSION_DENIED:
       $("#error-display")
@@ -50,4 +50,9 @@ function showError(error) {
       $("#error-display").text("An unknown error occurred.").addClass("mt-5");
       break;
   }
+}
+
+function hideGeoErrors() {
+  $("#error-display").text("");
+  $("#error-display").addClass("hidden").removeClass("mt-5");
 }

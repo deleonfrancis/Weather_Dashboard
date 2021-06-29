@@ -7,8 +7,6 @@ function getWeather(input) {
       success: function (response) {
         setLoading(false)  
         showData()
-        // $("#city-current-weather").removeClass("hidden");
-        // $("#2-day-weather").removeClass("hidden");
         console.log(response);
   
         const city = response.location.name;
@@ -85,7 +83,6 @@ function getWeather(input) {
         $("#minTemp1").text(minTemp1.toFixed(0));
         $("#humid1").text(avgHumidity1);
         $("#rainChance1").text(chance_of_rain1);
-  
   
         // Icon for Day 1
         const iconDay1Url = day1.day.condition.icon;

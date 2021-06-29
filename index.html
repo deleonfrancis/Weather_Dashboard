@@ -25,7 +25,8 @@
     <link rel="stylesheet" href="./assets/style.css" />
 
     <!-- Google -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDjJkj9ijn5LRW9kh5Q1KQvaT3faLoKUIg&callback=initAutocomplete&libraries=places&v=weekly"></script>
+    <script src="//maps.googleapis.com/maps/api/js?key=AIzaSyDjJkj9ijn5LRW9kh5Q1KQvaT3faLoKUIg&callback=initAutocomplete&libraries=places"></script>
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDjJkj9ijn5LRW9kh5Q1KQvaT3faLoKUIg&callback=initAutocomplete&libraries=places&v=weekly"></script> -->
   </head>
   <body>
     <!-- Jumbotron -->
@@ -39,7 +40,6 @@
     <main class="">
       <div class="row d-flex justify-content-center">
         <div class="col-md-3 city-name-area mt-5 shadow">
-          
           <!-- Geolocation Weather Search Btn -->
           <div
             style="text-align: center"
@@ -66,6 +66,7 @@
                 id="user-input"
                 type="text"
                 autocomplete="off"
+                autofocus
                 name="search"
                 placeholder="Search City or Zip Code"
                 aria-label="Search City or Zip Code"
@@ -141,13 +142,7 @@
                       UV Index:
                       <span
                         id="uv"
-                        class="
-                          bg-danger
-                          text-white
-                          p-2
-                          border-danger
-                          rounded
-                        "
+                        class="bg-danger text-white p-2 border-danger rounded"
                       ></span>
                     </p>
                   </div>

@@ -1,7 +1,6 @@
 function setLoading(bool) {
   if (bool === true) {
-    $("#error-display").text("");
-    $("#error-display").addClass("hidden").removeClass("mt-5");
+    hideGeoErrors()
     $("#loader").removeClass("hidden");
     hideData()
   }else{
