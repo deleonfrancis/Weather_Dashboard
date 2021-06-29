@@ -23,10 +23,6 @@
     />
     <!-- My CSS -->
     <link rel="stylesheet" href="./assets/style.css" />
-
-    <!-- Google -->
-    <script src="//maps.googleapis.com/maps/api/js?key=AIzaSyDjJkj9ijn5LRW9kh5Q1KQvaT3faLoKUIg&callback=initAutocomplete&libraries=places"></script>
-    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDjJkj9ijn5LRW9kh5Q1KQvaT3faLoKUIg&callback=initAutocomplete&libraries=places&v=weekly"></script> -->
   </head>
   <body>
     <!-- Jumbotron -->
@@ -197,9 +193,16 @@
     <!-- My JS -->
     <script src="./assets/geolocation.js"></script>
     <script src="./assets/weatherApi.js"></script>
-    <script src="./assets/autoFill.js"></script>
     <script src="./service/getWeather.js"></script>
     <script src="./service/loading.js"></script>
     <script src="./service/displayData.js"></script>
+
+    <!-- Google Autocomplete -->
+    <script src="./assets/autocomlete.js"></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDjJkj9ijn5LRW9kh5Q1KQvaT3faLoKUIg&callback=initAutocomplete&libraries=places&v=weekly"
+      async
+      defer
+    ></script>
   </body>
 </html>

@@ -7,7 +7,7 @@ function getWeather(input) {
       success: function (response) {
         setLoading(false)  
         showData()
-        console.log(response);
+        // console.log(response);
   
         const city = response.location.name;
         const state = response.location.region;
@@ -38,6 +38,7 @@ function getWeather(input) {
         const chanceOfRain =
           response.forecast.forecastday[0].day.daily_chance_of_rain;
   
+        // 
         const description = response.forecast.forecastday[0].day.condition.text;
         let arrayDescription = description.split(" ");
         let capDescription = "";
@@ -46,6 +47,7 @@ function getWeather(input) {
             arrayDescription[i][0].toUpperCase() + arrayDescription[i].substr(1);
           capDescription = arrayDescription.join(" ");
         }
+        // use css to cap each letter.
   
         if (country === "United States of America") {
           $("#cityName").text(`${city}, ${state}`);
