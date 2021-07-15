@@ -65,7 +65,7 @@ function getWeather(input) {
       todayIconImage.attr("src", icon);
       $("#today-icon").html(todayIconImage);
 
-      ///////////////   3 Day Weather
+      ///////////////   2 Day Weather
 
       // Day One
       const day1 = response.forecast.forecastday[1];

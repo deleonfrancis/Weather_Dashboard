@@ -1,3 +1,4 @@
+// Dynamically renders spinner
 function setLoading(bool) {
   if (bool === true) {
     hideGeoErrors()
