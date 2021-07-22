@@ -33,10 +33,7 @@
     <!-- Jumbotron -->
     <div class="jumbotron jumbotron-fluid p-3">
       <video autoplay muted loop>
-        <source
-          src="./video/thundercloud.mp4"
-          type="video/mp4"
-          />
+        <source src="./video/thundercloud.mp4" type="video/mp4" />
       </video>
       <div class="container text-white">
         <h1 class="display-4">Weather Dash</h1>
@@ -76,7 +73,7 @@
     </div>
 
     <!-- Main Section -->
-    <main class="">
+    <main class="" style="margin: auto;">
       <div id="loader" class="loader hidden"></div>
       <div id="error-display" class="d-flex justify-content-center"></div>
 
@@ -179,6 +176,54 @@
       </div>
     </main>
 
+    <!-- Footer -->
+    <footer class="bg-dark text-center text-white footer navbar-fixed-bottom">
+      <!-- Grid container -->
+      <div class="container p-4">
+        <!-- Section: Social media -->
+        <section class="mb-4">
+          <!-- Linkedin -->
+          <a
+            class="btn btn-outline-light btn-floating m-1"
+            href="https://www.linkedin.com/in/deleon-francis-9b09291b9/"
+            target="_blank"
+            role="button"
+            ><i class="fab fa-linkedin-in"></i
+          ></a>
+
+          <!-- Github -->
+          <a
+            class="btn btn-outline-light btn-floating m-1"
+            href="https://github.com/deleonfrancis"
+            target="_blank"
+            role="button"
+            ><i class="fab fa-github"></i
+          ></a>
+
+          <!-- Website -->
+          <a
+            class="btn btn-outline-light btn-floating m-1"
+            href="https://dxfrancis.com"
+            target="_blank"
+            role="button"
+            ><i class="fas fa-tv"></i></a>
+        </section>
+
+        <!-- Section: Text -->
+        <section class="mb-4">
+          <p>
+            Let's create something amazing together.
+          </p>
+        </section>
+
+      </div>
+
+      <!-- Copyright -->
+      <div  class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+        <p id="my-Copyright"></p>
+      </div>
+    </footer>
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, moment.js, then Bootstrap JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -192,9 +237,11 @@
     <!-- My JS -->
     <script src="./assets/geolocation.js"></script>
     <script src="./assets/weatherApi.js"></script>
+    <script src="./assets/footerCopyright.js"></script>
     <script src="./service/getWeather.js"></script>
     <script src="./service/loading.js"></script>
     <script src="./service/displayData.js"></script>
+    
 
     <!-- Google Autocomplete -->
     <script src="./assets/autocomlete.js"></script>

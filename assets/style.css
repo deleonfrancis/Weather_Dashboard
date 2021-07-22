@@ -15,8 +15,14 @@ ul.no-bullets {
   list-style-type: none; /* Remove bullets */
 }
 
- html {
-  width: 100%;
+html{
+  height: 100vh;
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
 }
 
 /* Form Input and Btn */
@@ -39,18 +45,19 @@ form.example button {
   float: left;
   width: 20%;
   padding: 10px;
-  background: #2196f3;
-  opacity: .3;
-  color: white;
+  background: white;
+  opacity: .9;
+  color: grey;
   font-size: 17px;
-  border: 1px solid grey;
+  border: 1px  solid grey;
   border-left: none;
   cursor: pointer;
 }
 
 form.example button:hover {
   background: #0b7dda;
-  opacity: .7;
+  opacity: 1;
+  color: white;
 
 }
 
@@ -150,4 +157,11 @@ form.example::after {
 .jumbotron .container {
   z-index: 2;
   position: relative;
+}
+
+
+/* Footer Section */
+
+.footer{
+  width:100%;
 }
