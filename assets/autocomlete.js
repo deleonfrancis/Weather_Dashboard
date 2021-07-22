@@ -16,7 +16,7 @@ function onPlaceChanged() {
   let place = autocomplete.getPlace();
 
   if (!place.geometry) {
-    document.getElementById("user-input").placeholder = "Enter a place";
+    document.getElementById("user-input").placeholder = "Search City or Zip Code";
   } else {
     getWeather(place.formatted_address)
   }
