@@ -17,11 +17,15 @@ ul.no-bullets {
 
 html{
   height: 100vh;
+  min-width: 100vh;
+  overflow: -moz-hidden-unscrollable;
+  /* overflow: hidden; */
 }
 
 body {
   display: flex;
   min-height: 100vh;
+  min-width: 100vh;
   flex-direction: column;
 }
 
@@ -133,6 +137,8 @@ form.example::after {
     transform: rotate(360deg);
   }
 }
+
+
 
 /* Video and jumbotron */
 
